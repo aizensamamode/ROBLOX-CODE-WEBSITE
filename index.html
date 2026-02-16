@@ -2,45 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MAIN PAGE</title>
+    <title>ROBLOX CODES - MAIN PAGE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Main.css">
 </head>
-
 <body>
-
-<h3 class="title">WELCOME TO THE WEBSITE DEDICATED FOR ROBLOX CODES</h3>
 
 <nav class="navbar">
     <div class="logo">ROBLOX CODES</div>
 
     <div class="menu-toggle" id="mobile-menu">
-        ☰
+        <span>☰</span>
     </div>
 
-    <ul class="nav-list">
+    <ul class="nav-list" id="nav-list">
         <li><a href="#">HOME</a></li>
-
         <li class="dropdown">
-            <a href="#">CODE ▾</a>
+            <a href="#" class="dropbtn">CODE ▾</a>
             <ul class="dropdown-content">
                 <li><a href="shindolife.html">SHINDO LIFE</a></li>
                 <li><a href="kaizen.html">KAIZEN</a></li>
                 <li><a href="bloxfruit.html">BLOX FRUIT</a></li>
             </ul>
         </li>
-
         <li><a href="#">BLOG</a></li>
     </ul>
 </nav>
 
-<script>
-const menu = document.getElementById("mobile-menu");
-const navList = document.querySelector(".nav-list");
+<div class="content-container">
+    <h3 class="title">WELCOME TO THE WEBSITE DEDICATED FOR ROBLOX CODES</h3>
+    </div>
 
-menu.addEventListener("click", () => {
-    navList.classList.toggle("active");
-});
+<script>
+    const menu = document.getElementById("mobile-menu");
+    const navList = document.getElementById("nav-list");
+
+    menu.addEventListener("click", () => {
+        navList.classList.toggle("active");
+    });
+
+    // Close menu when clicking a link (optional but better for mobile UX)
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth <= 768) {
+                navList.classList.remove('active');
+            }
+        });
+    });
 </script>
 
 </body>
