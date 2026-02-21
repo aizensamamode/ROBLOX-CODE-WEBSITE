@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Game Codes{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+    <style>
+        /* Simple dark navbar */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #1e1e1e;
+            color: white;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #111; /* dark background */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center; /* center the links */
+            gap: 50px; /* space between links */
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #1e90ff; /* light blue on hover */
+        }
+
+        .content-container {
+            padding-top: 80px; /* push content below navbar */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/shindo">Shindo Life</a>
+        <a href="/kaizen">Kaizen</a>
+        <a href="/bloxfruit">Blox Fruits</a>
+    </nav>
+
+    <div class="content-container">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
